@@ -1,8 +1,8 @@
 {
-  "name": "nodeformsandapi",
+  "name": "expressify-auth-catalog-main",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Express project using MVC  structure with backend including Email Verification",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
