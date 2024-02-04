@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <style>
+    td{
+      padding: 25px;
+    }
+    th{
+      padding: 25px;
+    }
+    tr{
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h1>User List</h1>
+  <form action="/auth/logout" method="post">
+    <input type="submit" value="logout">
+  </form>
+  <br><br>
+  <table border="1" style="border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Profile Image</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          <td>
+            <img src="/<%= user.profileImage %>" alt="Profile Image" style="max-width: 100px; max-height: 100px;">
+          </td>
+          <td><a href="/user/edit/<%= user.id %>">Edit</a></td>
+          <td><a href="/user/delete/<%= user.id %>">Delete</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

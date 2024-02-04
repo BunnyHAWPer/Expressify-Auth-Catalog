@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Categories</title>
+</head>
+<body>
+  <h1>Edit Categories</h1>
+  <form action="/category/editCategory/<%- category._id %>" method="POST" enctype="multipart/form-data">
+    <label for="categoryId">Category Id:</label>
+    <input type="text" id="categoryId" name="categoryId" value="<%- category.categoryId %>" required> <br><br>
+    
+    <label for="categoryName">Category Name:</label>
+    <input type="text" id="categoryName" name="categoryName" value="<%- category.categoryName %>" required> <br><br>
+
+    <label for="categoryImage">Category Image:</label>
+    <input type="file" id="categoryImage" name="categoryImage"> <br><br>
+
+    <button type="submit">Update Category</button>
+  </form>
+</body>
+</html>

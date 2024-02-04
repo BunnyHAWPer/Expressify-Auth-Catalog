@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add Category Form</title>
+</head>
+<body>
+    <h1>Add Category Form</h1>
+    <form action="/category/addCategory" method="post" enctype="multipart/form-data">
+        <label for="categoryId">category Id:</label>
+        <input type="text" id="categoryId" name="categoryId" required><br><br>
+        <label for="categoryName">Category Name:</label>
+        <input type="text" id="categoryName" name="categoryName" required><br><br>
+        <label for="categoryImage">Category Image:</label>
+        <input type="file" id="categoryImage" name="categoryImage"><br><br>
+        <button type="submit">Add Category</button>
+    </form>
+</body>
+</html>

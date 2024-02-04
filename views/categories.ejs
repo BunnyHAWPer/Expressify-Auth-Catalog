@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+  <style>
+    td {
+      padding: 25px;
+    }
+    th {
+      padding: 25px;
+    }
+    tr {
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Categories</h1>
+  <form action="/auth/logout" method="post">
+    <input type="submit" value="logout">
+  </form>
+  <br><br>
+  <table border="1" style="border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Category Image</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% categories.forEach(category => { %>
+        <tr>
+          <td><%= category.categoryId %></td>
+          <td><%= category.categoryName %></td>
+          <td>
+            <img src="/<%= category.categoryImage %>" alt="Profile Image" style="max-width: 100px; max-height: 100px;">
+          </td>
+          <td><a href="/category/editCategory/<%= category.id %>">Edit</a></td>
+          <td><a href="/category/deleteCategory/<%= category.id %>">Delete</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
